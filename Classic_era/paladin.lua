@@ -90,6 +90,49 @@ ConROC:SpecUpdate()
 	local _SealofWisdom = Holy_Ability.SealofWisdomRank1;
 	local _TurnUndead = Holy_Ability.TurnUndeadRank1;
 
+	--Protection
+	local _BlessingofKings = Prot_Ability.BlessingofKings;
+	local _BlessingofProtection = Prot_Ability.BlessingofProtectionRank1;
+	local _BlessingofSacrifice = Prot_Ability.BlessingofSacrificeRank1;
+	local _BlessingofSanctuary = Prot_Ability.BlessingofSanctuaryRank1;
+	local _DivineProtection = Prot_Ability.DivineProtectionRank1;	
+	local _DivineShield = Prot_Ability.DivineShieldRank1;
+	local _GreaterBlessingofKings = Prot_Ability.GreaterBlessingofKings;
+	local _GreaterBlessingofSalvation = Prot_Ability.GreaterBlessingofSalvation;
+	local _GreaterBlessingofSanctuary = Prot_Ability.GreaterBlessingofSanctuary;
+	local _HammerofJustice = Prot_Ability.HammerofJusticeRank1;
+	local _HammeroftheRighteous = Prot_Ability.HammeroftheRighteous;
+	local _BlessingofSalvation = Prot_Ability.BlessingofSalvation;
+	local _HolyShield = Prot_Ability.HolyShieldRank1;
+	local _RighteousFury = Prot_Ability.RighteousFury;
+	local _SealofJustice = Prot_Ability.SealofJustice;
+
+	--Retribution
+	local _AvengingWrath = Ret_Ability.AvengingWrath;
+	local _BlessingofMight = Ret_Ability.BlessingofMightRank1;
+	local _GreaterBlessingofMight = Ret_Ability.GreaterBlessingofMightRank1;
+	local _SanctityAura = Player_Auras.SanctityAura;
+	local _SealofCommand = Ret_Ability.SealofCommandRank1;
+	local _SealoftheCrusader = Ret_Ability.SealoftheCrusaderRank1;
+	local _JudgementoftheCrusaderDEBUFF = Target_Debuff.JudgementoftheCrusaderRank1;
+	local _JudgementofJusticeDEBUFF = Target_Debuff.JudgementofJustice
+	local _JudgementofLightDEBUFF = Target_Debuff.JudgementofLightRank1;
+	local _JudgementofWisdomDEBUFF = Target_Debuff.JudgementofWisdomRank1;
+
+--Auras
+	--Holy
+	local _ConcentrationAura = Player_Auras.ConcentrationAura;
+
+	--Protection
+	local _DevotionAura = Player_Auras.DevotionAuraRank1;
+	local _FireResistanceAura = Player_Auras.FireResistanceAuraRank1;
+	local _FrostResistanceAura = Player_Auras.FrostResistanceAuraRank1;	
+	local _ShadowResistanceAura = Player_Auras.ShadowResistanceAuraRank1;
+
+	--Retribution
+	local _RetributionAura = Player_Auras.RetributionAuraRank1;	
+
+function ConROC:UpdateSpellID()
 --Holy
 if IsSpellKnown(Holy_Ability.BlessingofLightRank3) then _BlessingofLight = Holy_Ability.BlessingofLightRank3;	
 elseif IsSpellKnown(Holy_Ability.BlessingofLightRank2) then _BlessingofLight = Holy_Ability.BlessingofLightRank2; end
@@ -155,22 +198,6 @@ if IsSpellKnown(Holy_Ability.TurnUndeadRank3) then _SealofWisdom = Holy_Ability.
 elseif IsSpellKnown(Holy_Ability.TurnUndeadRank2) then _SealofWisdom = Holy_Ability.TurnUndeadRank2;end
 
 --Protection
-local _BlessingofKings = Prot_Ability.BlessingofKings;
-local _BlessingofProtection = Prot_Ability.BlessingofProtectionRank1;
-local _BlessingofSacrifice = Prot_Ability.BlessingofSacrificeRank1;
-local _BlessingofSanctuary = Prot_Ability.BlessingofSanctuaryRank1;
-local _DivineProtection = Prot_Ability.DivineProtectionRank1;	
-local _DivineShield = Prot_Ability.DivineShieldRank1;
-local _GreaterBlessingofKings = Prot_Ability.GreaterBlessingofKings;
-local _GreaterBlessingofSalvation = Prot_Ability.GreaterBlessingofSalvation;
-local _GreaterBlessingofSanctuary = Prot_Ability.GreaterBlessingofSanctuary;
-local _HammerofJustice = Prot_Ability.HammerofJusticeRank1;
-local _HammeroftheRighteous = Prot_Ability.HammeroftheRighteous;
-local _BlessingofSalvation = Prot_Ability.BlessingofSalvation;
-local _HolyShield = Prot_Ability.HolyShieldRank1;
-local _RighteousFury = Prot_Ability.RighteousFury;
-local _SealofJustice = Prot_Ability.SealofJustice;
-
 if IsSpellKnown(Prot_Ability.BlessingofProtectionRank3) then _BlessingofProtection = Prot_Ability.BlessingofProtectionRank3;	
 elseif IsSpellKnown(Prot_Ability.BlessingofProtectionRank2) then _BlessingofProtection = Prot_Ability.BlessingofProtectionRank2; end
 
@@ -192,17 +219,6 @@ if IsSpellKnown(Prot_Ability.HolyShieldRank3) then _HolyShield = Prot_Ability.Ho
 elseif IsSpellKnown(Prot_Ability.HolyShieldRank2) then _HolyShield = Prot_Ability.HolyShieldRank2; end
 
 --Retribution
-local _AvengingWrath = Ret_Ability.AvengingWrath;
-local _BlessingofMight = Ret_Ability.BlessingofMightRank1;
-local _GreaterBlessingofMight = Ret_Ability.GreaterBlessingofMightRank1;
-local _SanctityAura = Player_Auras.SanctityAura;
-local _SealofCommand = Ret_Ability.SealofCommandRank1;
-local _SealoftheCrusader = Ret_Ability.SealoftheCrusaderRank1;
-local _JudgementoftheCrusaderDEBUFF = Target_Debuff.JudgementoftheCrusaderRank1;
-local _JudgementofJusticeDEBUFF = Target_Debuff.JudgementofJustice
-local _JudgementofLightDEBUFF = Target_Debuff.JudgementofLightRank1;
-local _JudgementofWisdomDEBUFF = Target_Debuff.JudgementofWisdomRank1;
-
 if IsSpellKnown(Ret_Ability.BlessingofMightRank6) then _BlessingofMight = Ret_Ability.BlessingofMightRank6;
 elseif IsSpellKnown(Ret_Ability.BlessingofMightRank5) then _BlessingofMight = Ret_Ability.BlessingofMightRank5;
 elseif IsSpellKnown(Ret_Ability.BlessingofMightRank4) then _BlessingofMight = Ret_Ability.BlessingofMightRank4;
@@ -224,14 +240,7 @@ elseif IsSpellKnown(Ret_Ability.SealoftheCrusaderRank2) then _SealoftheCrusader 
 
 --Auras
 --Holy
-local _ConcentrationAura = Player_Auras.ConcentrationAura;
-
 --Protection
-local _DevotionAura = Player_Auras.DevotionAuraRank1;
-local _FireResistanceAura = Player_Auras.FireResistanceAuraRank1;
-local _FrostResistanceAura = Player_Auras.FrostResistanceAuraRank1;	
-local _ShadowResistanceAura = Player_Auras.ShadowResistanceAuraRank1;
-
 if IsSpellKnown(Player_Auras.DevotionAuraRank7) then _DevotionAura = Player_Auras.DevotionAuraRank7;
 elseif IsSpellKnown(Player_Auras.DevotionAuraRank6) then _DevotionAura = Player_Auras.DevotionAuraRank6;
 elseif IsSpellKnown(Player_Auras.DevotionAuraRank5) then _DevotionAura = Player_Auras.DevotionAuraRank5;
@@ -249,8 +258,6 @@ if IsSpellKnown(Player_Auras.ShadowResistanceAuraRank3) then _ShadowResistanceAu
 elseif IsSpellKnown(Player_Auras.ShadowResistanceAuraRank2) then _ShadowResistanceAura = Player_Auras.ShadowResistanceAuraRank2; end	
 
 --Retribution
-local _RetributionAura = Player_Auras.RetributionAuraRank1;	
-
 if IsSpellKnown(Player_Auras.RetributionAuraRank5) then _RetributionAura = Player_Auras.RetributionAuraRank5;
 elseif IsSpellKnown(Player_Auras.RetributionAuraRank4) then _RetributionAura = Player_Auras.RetributionAuraRank4;
 elseif IsSpellKnown(Player_Auras.RetributionAuraRank3) then _RetributionAura = Player_Auras.RetributionAuraRank3;	
@@ -305,6 +312,8 @@ ids.optionMaxIds = {
 	ShadowResistanceAura = _ShadowResistanceAura,
 	RetributionAura = _RetributionAura,
 }
+end
+ConROC:UpdateSpellID()
 
 function ConROC:EnableRotationModule()
 	self.Description = "Paladin";
@@ -318,19 +327,11 @@ function ConROC:EnableRotationModule()
 end
 function ConROC:PLAYER_TALENT_UPDATE()
 	ConROC:SpecUpdate();
-	if ConROCSpellmenuFrame:IsVisible() then
-		ConROCSpellmenuFrame_CloseButton:Hide();
-		ConROCSpellmenuFrame_Title:Hide();
-		ConROCSpellmenuClass:Hide();
-		ConROCSpellmenuFrame_OpenButton:Show();
-		optionsOpened = false;
-		ConROCSpellmenuFrame:SetSize((90) + 14, (15) + 14)
-	else
-		ConROCSpellmenuFrame:SetSize((90) + 14, (15) + 14)
-	end
+    ConROC:closeSpellmenu();
 end
 		
 function ConROC.Paladin.Damage(_, timeShift, currentSpell, gcd)
+ConROC:UpdateSpellID()
 --Character
 	local plvl 												= UnitLevel('player');
 --Racials
